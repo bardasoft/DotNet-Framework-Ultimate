@@ -94,10 +94,10 @@ namespace DotNet.Framework.Ultimate.UI.Controls {
 		public virtual Color ActiveColor {
 			get {
 				if (this.Clicked)
-					return this.ClickColor == null || this.ClickColor == Color.Transparent ? ControlPaint.LightLight(this.BackColor) : this.ClickColor;
+					return this.ClickColor == null || this.ClickColor == Color.Empty ? ControlPaint.LightLight(this.BackColor) : this.ClickColor;
 
 				if (this.Hovered)
-					return this.HoverColor == null || this.HoverColor == Color.Transparent ? ControlPaint.Light(this.BackColor) : this.HoverColor;
+					return this.HoverColor == null || this.HoverColor == Color.Empty ? ControlPaint.Light(this.BackColor) : this.HoverColor;
 
 				return this.BackColor == null ? Color.Transparent : this.BackColor;
 			}
@@ -136,7 +136,9 @@ namespace DotNet.Framework.Ultimate.UI.Controls {
 		[DefaultValue(false)]
 		public bool Clicked { get; set; }
 
-		public WindowsDefaultTitleBarButton() { }
+		public WindowsDefaultTitleBarButton() {
+			this.Size = new Size(45, 29);
+		}
 
 		protected override void OnMouseEnter(EventArgs e) {
 			base.OnMouseEnter(e);

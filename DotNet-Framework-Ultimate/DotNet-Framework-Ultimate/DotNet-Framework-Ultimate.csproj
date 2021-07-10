@@ -47,6 +47,7 @@
     <Compile Include="Native\Constants\HitTest.cs" />
     <Compile Include="Native\Constants\WindowMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TypedEventHandler.cs" />
     <Compile Include="UI\Controls\BringToFrontButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -66,15 +67,40 @@
     <Compile Include="UI\Controls\ResizableForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="UI\Controls\ResizablePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\Srollables\IScrollable.cs" />
+    <Compile Include="UI\Controls\Srollables\IScrollBar.cs" />
+    <Compile Include="UI\Controls\Srollables\ScrollablePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\Srollables\ScrollBarH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\Srollables\ScrollBarH.Designer.cs">
+      <DependentUpon>ScrollBarH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\Srollables\ScrollBarV.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\Srollables\ScrollBarV.Designer.cs">
+      <DependentUpon>ScrollBarV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\Srollables\ShowScrollBarOption.cs" />
     <Compile Include="UI\Controls\WindowsDefaultTitlebarButton.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="UI\Controls\WndProcBorderFilter.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <None Include="..\.editorconfig">
-      <Link>.editorconfig</Link>
-    </None>
+    <EmbeddedResource Include="UI\Controls\Srollables\ScrollBarH.resx">
+      <DependentUpon>ScrollBarH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\Srollables\ScrollBarV.resx">
+      <DependentUpon>ScrollBarV.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
