@@ -15,14 +15,6 @@ namespace DotNet.Framework.Ultimate.UI.Controls {
 
 		private int _resizeBorderThickness = 5;
 
-		protected override CreateParams CreateParams {
-			get {
-				CreateParams cp = base.CreateParams;
-				cp.ClassStyle |= 0x00020000;
-				return cp;
-			}
-		}
-
 		/// <summary>
 		/// The thickness of the resize border on all sides of the window. The border is invisible. Setting it will not result in a padding.
 		/// </summary>
